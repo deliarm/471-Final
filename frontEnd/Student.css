@@ -1,6 +1,6 @@
 /* Background */
 body {
-    background-image: url('BackgroundImage.jpg');
+    background: url('img/upscaler-BackgroundImage-2x.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
