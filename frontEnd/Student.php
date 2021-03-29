@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<!--References: https://www.youtube.com/watch?v=v1PeTDrw6OY-->
+<?php
+    session_start();
+?>
+
 <html>
     <head>
         <meta charset= "US-ASCII">
@@ -12,7 +14,7 @@
         </Title>
     </head>
     <body>
-        <h1> Student</h1>
+        <h1> Student <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname']; ?></h1>
 <!--Searc Button-->
 <div class = "Search-Courses-Box" >
     <input class = "Search-Text" type="text" name = "" placeholder = "Type in Your Course!" >
