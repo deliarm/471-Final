@@ -1,0 +1,94 @@
+/* Background */
+body {
+    background-image: url('BackgroundImage.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    
+}
+.button-container {
+    margin-top: 15px;
+    justify-content: space-between;
+  }
+
+button {
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #333;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+  
+  }
+
+button:hover {
+    filter: brightness(110%);
+  }
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+  }
+
+.Add-Course:hover{
+    color: red;
+  }
+
+.Add-Course {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-40%, -30%);
+    width: 80%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.Remove-Course:hover{
+    color: red;
+  }
+
+.Remove-Course {
+    position: absolute;
+    top: 37%;
+    left: 40%;
+    transform: translate(-40%, -37%);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    width: 80%;
+}
+
+.Add-New-Student:hover{
+    color: red;
+  }
+
+.Add-New-Student {
+    position: absolute;
+    top: 44%;
+    left: 40%;
+    transform: translate(-40%, -44%);
+    width: 80%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.Remove-Student:hover{
+    color: red;
+  }
+
+.Remove-Student {
+    position: absolute;
+    top: 51%;
+    left: 40%;
+    transform: translate(-40%, -51%);
+    width: 80%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
