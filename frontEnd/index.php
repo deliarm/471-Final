@@ -1,5 +1,4 @@
 <?php
-session_start();
 ?>
 
 
@@ -30,15 +29,16 @@ session_start();
                 <label>Password</label>
             </div>
             <!-- dropdwon-->
-            <select name="priority" class="select-css">
-                <option value = "Student">Student</option>
-                <option value = "Admin">Administrator</option>
+            <select id="priority" name="priority" class="select-css">
+                <option value = "0">Student</option>
+                <option value = "1">Administrator</option>
             </select>
             <br>
             <!-- sign in button-->
             <input type="submit" value="Sign In" id="SB">
-            <div id="red-text" style="visibility: hidden"> 
-                Invalid login 
+            <br>
+        
+            <div id="red-text" > 
             </div>
             <div class="register_Link">
                 Not A student? <a href="#">Click Here</a>
