@@ -38,8 +38,6 @@
             <input type="submit" value="Sign In" id="SB">
             <br>
         
-            <div id="red-text" > 
-            </div>
             <div class="register_Link">
                 Not A student? <a href="#">Click Here</a>
             </div>

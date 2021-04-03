@@ -8,7 +8,6 @@ window.onload = () => {
         tab_switcher.addEventListener('click', () => {
             document.querySelector('.tabs .tab.is-active').classList.remove('is-active');
             tab_switcher.parentNode.classList.add('is-active');
-
             SwitchPage(page_id);
         });
     }
