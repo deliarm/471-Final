@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start(); // delete theste 3 lines 
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
 <header>
     <nav>
-        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> </h1>
+        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> </h1> // delete this line
         
         <ul class="tabs">
             <li class="tab is-active">
@@ -31,22 +31,28 @@
     </nav>
 </header>
 
+
+
 <main>
     <section class="pages"> 
     <div class="page is-active" data-page="1">
-        <h2>Page 1</h2>
+        <h2>Page 1 working</h2>
         <p>Welcome to the enroll page</p>
     </div>
+
     <div class="page" data-page="2">
         <h2>Page 2</h2>
         <p>Welcome to the drop Course page</p>
     </div>
+
     <div class="page" data-page="3">
         <h2>Page 3</h2>
         <p>Welcome to the view page</p>
     </div>
     </section>
 </main>
+
+// insert footer
 
 <script src="admin.js"></script>
 </body>

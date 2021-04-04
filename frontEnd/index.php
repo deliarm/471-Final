@@ -37,9 +37,12 @@
             <!-- sign in button-->
             <input type="submit" value="Sign In" id="SB">
             <br>
-        
+            <div class=red-text id=red-text style='width: 180px; height: 24px; margin-left: auto; margin-right: auto'>
+                Invalid Login Credentials
+            </div>
+            <br>
             <div class="register_Link">
-                Not A student? <a href="#">Click Here</a>
+                Not A student? <a href="https://www.ucalgary.ca/future-students/undergraduate/apply">Click Here</a>
             </div>
 
         </form>

@@ -42,13 +42,17 @@
         <div class="page is-active" data-page="1">
             <h2>Add a New Course Below</h2>
             <div class="newCourse-box">
-                <form action="addCourse.php" method="put">
+                <form action="addCourse.php" method="post">
+
                     <div class="txt_field">
-                        <input type="text" required id="CourseNum" name="CourseNum" placeholder="New Course Number">
+                        <input type="text" required id="CourseNum" name="CourseNum" >
+                        <span></span>
+                        <label> New Course Number</label>
                     </div>
-                    <!-- password box-->
                     <div class="txt_field">
-                        <input type="txt_field" required id="CourseName" name="CourseName" placeholder="New Course Name">
+                        <input type="txt_field" required id="CourseName" name="CourseName">
+                        <span></span>
+                        <label> New Course Name</label>
                     </div>
 
                     <?php
@@ -57,8 +61,8 @@
 
                         $result = mysqli_query($link,$sql);
                         if ($result -> num_rows != 0) {
-                            echo '<label>Department:';
                             echo '<select name="DepartmentName">';
+                            echo '<option value="none">Select Department</option>';
                             $num_results = mysqli_num_rows($result);
                             for ($i=0;$i<$num_results;$i++) {
                                 $row = mysqli_fetch_array($result);
@@ -78,21 +82,20 @@
 
                         $result = mysqli_query($link,$sql);
                         if ($result -> num_rows != 0) {
-                            echo '<label>Professor:';
                             echo '<select name="ProfID">';
-
+                            echo '<option value="none">Select Professor</option>';
                             $num_results = mysqli_num_rows($result);
                             for ($i=0;$i<$num_results;$i++) {
                                 $row = mysqli_fetch_array($result);
-                                $num = $row['UniversityID'];
-                                $sql2 = "SELECT * FROM person WHERE UniversityID=$num";
+                                $Pnum = $row['UniversityID'];
+                                $sql2 = "SELECT * FROM person WHERE UniversityID=$Pnum";
                                 $result2 = mysqli_query($link,$sql2);
                                 if($result2 -> num_rows != 0){
                                     $sec = mysqli_fetch_array($result2);
                                     $Fname = $sec['Fname'];
                                     $Lname = $sec['Lname'];
                                 }
-                                echo '<option value="'.$num.'">' .$num." \t, ".$Fname." ".$Lname. '</option>';
+                                echo '<option value="'.$Pnum.'">' .$Pnum." \t, ".$Fname." ".$Lname. '</option>';
                             }
                             echo '</select>';
                             echo '</label>';
@@ -107,15 +110,14 @@
 
                         $result = mysqli_query($link,$sql);
                         if ($result -> num_rows != 0) {
-                            echo '<label>Classroom Number:';
                             echo '<select name="RoomID">';
-
+                            echo '<option value="none">Select Room and Building</option>';
                             $num_results = mysqli_num_rows($result);
                             for ($i=0;$i<$num_results;$i++) {
                                 $row = mysqli_fetch_array($result);
-                                $name = $row['RoomNum'];
+                                $room = $row['RoomNum'];
                                 $name2 = $row['Building']; 
-                                echo '<option value="' .$name. '">' .$name." \t, ".$name2. '</option>';
+                                echo '<option value="' .$room. '">' .$room." \t, ".$name2. '</option>';
                             }
                             echo '</select>';
                             echo '</label>';
@@ -127,6 +129,13 @@
                     <!-- sign in button-->
                     <input type="submit" value="Add Course" id="SB">
                     <br>
+                    <br>
+                    <div class=redtext id=redtext style='width: 300px; height: 20px; margin-left: auto; margin-right: auto' >
+                        Failed to insert course due to invalid input
+                    </div>
+                    <div class=greentext id=greentext style='width: 300px; height: 20px; margin-left: auto; margin-right: auto' >
+                        Successfully Added New Course
+                    </div>
                 </form>
             </div>
         </div>

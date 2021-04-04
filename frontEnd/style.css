@@ -9,7 +9,7 @@ body{
 
 .login-box{
     width: 500px;
-    height: 425px;
+    height: 450px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,7 +76,7 @@ form .txt_field{
 input[type="submit"]{
     width: 100%;
     height: 40px;
-    background: #2691d9;
+    background: royalblue;
     border: 1px solid;
     border-radius: 25px;
     font-size: 18px;
@@ -86,7 +86,7 @@ input[type="submit"]{
     outline: none;
 }
 input[type="submit"]:hover{
-    border-color: #2691d9;
+    border-color: royalblue;
     transition: .5s;
 }
 .register_Link{
@@ -96,7 +96,7 @@ input[type="submit"]:hover{
     color: #666;
 }
 .register_Link a{
-    color: #2691d9;
+    color: royalblue;
     text-decoration: none;
 }
 .register_Link a:hover{
@@ -142,4 +142,11 @@ input[type="submit"]:hover{
 }
 .select-css option {
 	font-weight:normal;
+}
+
+.red-text{
+    font-size: 16;
+    padding-top: 5px;
+    color: red;
+    display: none;
 }

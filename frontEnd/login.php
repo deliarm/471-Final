@@ -40,14 +40,24 @@ session_start();
     			}
     		}
     		else{
-    			header("Location: http://localhost/471-final/frontEnd/index.php");
-    			exit();
+				?>
+				<style type="text/css">
+				   #red-text{
+					   display:block;
+				   }
+				</style>
+				<?php
     		}
     	}
     	// if info not found
     	else{
-    		header("Location: http://localhost/471-final/frontEnd/index.php");
-    		exit();
+			?>
+			<style type="text/css">
+			   #red-text{
+				   display:block;
+			   }
+			</style>
+			<?php
     	}
     }
     include('index.php');
