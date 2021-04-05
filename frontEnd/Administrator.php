@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start()
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@
     <section class="pages"> 
         <!-- START  OF ADD COURSE PAGE -->
         <div class="page is-active" data-page="1">
-            <h2>Add a New Course Below</h2>
+            <h2>Add a New Course</h2>
             <div class="newCourse-box">
                 <form action="addCourse.php" method="post">
 
@@ -142,12 +142,53 @@
         <!-- END OF ADD COURSE PAGE -->
 
 
+
+
         <!-- START OF REMOVE COURSE PAGE -->
         <div class="page" data-page="2">
-            <h2>Page 2</h2>
-            <p>Welcome to the remove Course page</p>
+            <h2>Remove A Course </h2>
+            <br>
+            <div class="removeCourseBox">
+                <form action="removeCourse.php" method="post" >
+                    <?php
+                        $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
+                        $sql = "SELECT * FROM course";
+
+                        $result = mysqli_query($link,$sql);
+                        if ($result -> num_rows != 0) {
+                            echo '<select name="Courses">';
+                            echo '<option value="none">Select Course To Be Removed</option>';
+                            $num_results = mysqli_num_rows($result);
+                            for ($i=0;$i<$num_results;$i++) {
+                                $row = mysqli_fetch_array($result);
+                                $num  = $row['Number'];
+                                $name = $row['Name'];
+                                $dept = $row['DeptName'];
+                                echo '<option value="'.$num.'">' .$num. " \t, ".$name." \t, ".$dept. '</option>';
+                            }
+                            echo '</select>';
+                            echo '</label>';
+                        }
+                        mysqli_close($link);
+                    ?>
+                    <br>
+                    <input type="submit" value="Remove Course" id="SB">
+                    <br>
+                    <br>
+                    <div class=greentext2 id=greentext2 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                        Successfully Removed Course
+                    </div>
+                    <div class=redtext2 id=redtext2 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                        Error Removing Course, Try Again
+                    </div>
+                </form>
+            </div>
         </div>
+        
         <!-- END OF REMOVE COURSE PAGE -->
+
+
+
 
 
         <!-- START OF ADD STUDENT PAGE -->
