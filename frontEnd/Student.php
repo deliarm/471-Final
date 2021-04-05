@@ -53,7 +53,6 @@
 </main>
 
 // insert footer
-<!--Footer-->
 <div class = "Footer">
     <div class = "Inner_Footer">
         <div class = "logo_container">
