@@ -196,28 +196,71 @@ session_start()
             <h2>Add A New Student</h2>
             <div class="AddStudentBox">
                 <form action="AddStudent.php" method="post">
-                <div class="txt_field">
-                    <input type="text" required id="idNum" name="idNum" >
-                    <span></span>
-                    <label> New ID Number</label>
-                </div>
-                <div class="txt_field">
-                    <input type="txt_field" required id="Fname" name="Fname">
-                    <span></span>
-                    <label> Student's First Name</label>
-                </div>
-                <div class="txt_field">
-                    <input type="text" required id="CourseNum" name="CourseNum" >
-                    <span></span>
-                    <label> New Course Number</label>
-                </div>
-                <div class="txt_field">
-                    <input type="txt_field" required id="CourseName" name="CourseName">
-                    <span></span>
-                    <label> New Course Name</label>
-                </div>
-
-
+                    <div class="txt_field">
+                        <input type="text" required id="idNum" name="idNum" >
+                        <span></span>
+                        <label> New ID Number</label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="Fname" name="Fname">
+                        <span></span>
+                        <label> Student's First Name</label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="text" required id="Lname" name="Lname" >
+                        <span></span>
+                        <label> Student's Last Name </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="dob" name="dob">
+                        <span></span>
+                        <label> Date Of Birth (MM-DD-YYYY) </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="houseNum" name="houseNum">
+                        <span></span>
+                        <label> Student's House Number</label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="street" name="street">
+                        <span></span>
+                        <label> Student's Street Address </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="city" name="city">
+                        <span></span>
+                        <label> City Of Residence </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="startDate" name="startDate">
+                        <span></span>
+                        <label> Starting Date (MM-DD-YYYY) </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="gradDate" name="gradDate">
+                        <span></span>
+                        <label> Expected Graduation (MM-DD-YYYY) </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="major" name="major">
+                        <span></span>
+                        <label> Student's Major </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="txt_field" required id="minor" name="minor">
+                        <span></span>
+                        <label> Student's Minor ("N/A" if unspecified) </label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="password" required id="pass" name="pass">
+                        <span></span>
+                        <label> Student's Password </label>
+                    </div>
+                    <select name="gender" id="gender">
+                        <option value="Male"> Male </option>
+                        <option value="Female"> Female </option>
+                        <option value="Other"> Other </option>
+                    </select>
                 </form>
             </div>
         </div>
@@ -242,7 +285,7 @@ session_start()
 
 
 
-<div class = "Footer">
+<!-- <div class = "Footer">
     <div class = "Inner_Footer">
         <div class = "logo_container">
             <img src = img/Logo.jpg></img>
@@ -271,7 +314,7 @@ session_start()
             <a href = "http://localhost/471-final/frontEnd/index.php">Logout</a> 
         </div>
     </div>
-</div>
+</div> -->
 
 <script src="admin.js"></script>
 </body>
