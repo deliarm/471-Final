@@ -193,10 +193,39 @@ session_start()
 
         <!-- START OF ADD STUDENT PAGE -->
         <div class="page" data-page="3">
-            <h2>Page 3</h2>
-            <p>Welcome to the add student page</p>
+            <h2>Add A New Student</h2>
+            <div class="AddStudentBox">
+                <form action="AddStudent.php" method="post">
+                <div class="txt_field">
+                    <input type="text" required id="idNum" name="idNum" >
+                    <span></span>
+                    <label> New ID Number</label>
+                </div>
+                <div class="txt_field">
+                    <input type="txt_field" required id="Fname" name="Fname">
+                    <span></span>
+                    <label> Student's First Name</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" required id="CourseNum" name="CourseNum" >
+                    <span></span>
+                    <label> New Course Number</label>
+                </div>
+                <div class="txt_field">
+                    <input type="txt_field" required id="CourseName" name="CourseName">
+                    <span></span>
+                    <label> New Course Name</label>
+                </div>
+
+
+                </form>
+            </div>
         </div>
         <!-- END OF ADD STUDENT PAGE -->
+
+
+
+
 
 
         <!-- START OF REMOVE STUDENT PAGE -->
