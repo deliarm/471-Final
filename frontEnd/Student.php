@@ -53,7 +53,37 @@
 </main>
 
 // insert footer
-
+<div class = "Footer">
+    <div class = "Inner_Footer">
+        <div class = "logo_container">
+            <img src = img/Logo.jpg></img>
+        </div>
+        <div class = "Links">
+            <h1>Github Accounts</h1>
+            <a href = "https://github.com/nchahal3">Navroop Chahal</a> 
+            <a href = "https://github.com/deliarm">Deliar Mohammadi</a>
+            <a href = "https://github.com/jessicaljx1">Jiexin (Jessica) Liu</a>
+        </div>
+        <div class = "Links">
+            <h1>Academics</h1>
+            <a href = "https://www.ucalgary.ca">Ucalgary</a> 
+            <a href = "https://contacts.ucalgary.ca/directory/departments">Department & Programs</a>
+            <a href = "https://www.ucalgary.ca/future-students">Undergraduate Studies</a>
+            <a href = "https://library.ucalgary.ca">University Library</a>
+        </div>
+        <div class = "Links">
+            <h1>Media & Publications</h1>
+            <a href = "https://www.ucalgary.ca/ucalgary-news">News</a> 
+            <a href = "https://ucalgary.ca/student-services/marcom/uthisweek">UThisWeek</a>
+            <a href = "https://www.su.ucalgary.ca">Student Union</a>
+        </div>
+        <div class = "Links">
+            <h1>External</h1>
+            <a href = "localhost/htdocs/index.php">Logout</a> 
+        </div>
+    </div>
+</div>
+   
 <script src="admin.js"></script>
 </body>
 </html>
