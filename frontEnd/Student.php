@@ -1,5 +1,5 @@
 <?php
-    session_start(); // delete theste 3 lines 
+    session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
 <header>
     <nav>
-        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> </h1> // delete this line
+        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> </h1> 
         
         <ul class="tabs">
             <li class="tab is-active">
@@ -52,7 +52,7 @@
     </section>
 </main>
 
-// insert footer
+
 <div class = "Footer">
     <div class = "Inner_Footer">
         <div class = "logo_container">
@@ -79,7 +79,7 @@
         </div>
         <div class = "Links">
             <h1>External</h1>
-            <a href = "localhost/htdocs/index.php">Logout</a> 
+            <a href = "http://localhost/471-final/frontEnd/index.php">Logout</a> 
         </div>
     </div>
 </div>
