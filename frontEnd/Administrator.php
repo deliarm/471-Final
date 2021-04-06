@@ -275,14 +275,44 @@ session_start()
                 <!-- END OF ADD STUDENT PAGE -->
 
 
-
-
-
-
                 <!-- START OF REMOVE STUDENT PAGE -->
                 <div class="page" data-page="4">
                     <h2>Remove A Student</h2>
-                    
+                    <br>
+                    <div class="removeStudentBox">
+                        <form action="removeStudent.php" method="post" >
+                            <?php
+                                $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
+                                $sql = "SELECT * FROM person WHERE UniversityID IN (SELECT UniversityID FROM student)";
+                                $result = mysqli_query($link,$sql);
+                                if ($result -> num_rows != 0) {
+                                    echo '<select name="studentList">';
+                                    echo '<option value="none">Select Student To Be Removed</option>';
+                                    $num_results = mysqli_num_rows($result);
+                                    for ($i=0;$i<$num_results;$i++) {
+                                        $row = mysqli_fetch_array($result);
+                                        $num  = $row['UniversityID'];
+                                        $name = $row['Fname'];
+                                        $Lname = $row['Lname'];
+                                        echo '<option value="'.$num.'">' .$num. " \t, ".$name."  ".$Lname. '</option>';
+                                    }
+                                    echo '</select>';
+                                    echo '</label>';
+                                }
+                                mysqli_close($link);
+                            ?>
+                            <br>
+                            <input type="submit" value="Remove Course" id="SB">
+                            <br>
+                            <br>
+                            <div class=greentext4 id=greentext4 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                                Successfully Removed Student
+                            </div>
+                            <div class=redtext4 id=redtext4 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                                Error Removing Student, Try Again
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- END OF REMOVE STUDENT PAGE -->
 

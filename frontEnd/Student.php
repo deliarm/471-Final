@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <Title>Student Page</Title>
     <link rel="stylesheet" href="admin.css">
+    <script src="admin.js"></script>
+    <script src="stickyFooter.js"></script>
 </head>
     
 <body>

@@ -217,7 +217,6 @@ select option {
   color: #5DFC0A;
   display: none;
 }
-
 .redtext2{
   color: red;
   display: none;
@@ -234,6 +233,15 @@ select option {
   color: #5DFC0A;
   display:none;
 }
+.redtext4{
+  color: red;
+  display: none;
+}
+.greentext4{
+  color: #5DFC0A;
+  display: none;
+}
+
 
 #Courses{
   width: 500px;
