@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
- include('Administrator.php');
+include('Administrator.php');
 
 $Cname = $_POST['CourseName'];      // class name
 $Cnum  = $_POST['CourseNum'];       // class number
@@ -16,8 +16,7 @@ $Room = $_POST['RoomID'];           // Room Number
  if($con->connect_error){
      die("Failed connection".$con->connect_error );
  }else{
-        
-        @$exist = $con->query("SELECT * FROM course WHERE Number=$Cnum");
+        $exist = $con->query("SELECT * FROM course WHERE Number=$Cnum");
         if( ($exist->num_rows ==0) and $Dname !="none" and $Prof !="none" and $Room !="none"){
             $stmt = $con->prepare("INSERT INTO course (Number, Name , DeptName , ProfessorUID , ClassroomNum) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("issii", $Cnum ,$Cname ,$Dname ,$Prof ,$Room);
