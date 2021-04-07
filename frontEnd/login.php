@@ -29,12 +29,14 @@ session_start();
     			if( $type == "0" and ($roleS_result->num_rows >0) ){
     				$_SESSION['Fname'] = $data['Fname'];
     				$_SESSION['Lname'] = $data['Lname'];
+					$_SESSION['ID'] = $data['UniversityID'];
     				header("Location: http://localhost/471-final/frontEnd/Student.php");
     				exit();
     			}
     			else if($type=="1" and $roleA_result->num_rows >0){
     				$_SESSION['Fname'] = $data['Fname'];
     				$_SESSION['Lname'] = $data['Lname'];
+					$_SESSION['ID'] = $data['UniversityID'];
     				header("Location: http://localhost/471-final/frontEnd/Administrator.php");
     				exit();
     			}

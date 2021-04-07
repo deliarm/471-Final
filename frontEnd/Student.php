@@ -17,7 +17,7 @@
 
 <header>
     <nav>
-        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> </h1> 
+        <h1> Hello <?php echo $_SESSION['Fname']; ?> <?php echo $_SESSION['Lname'];?> <?php echo $_SESSION['ID'];?> </h1> 
         
         <ul class="tabs">
             <li class="tab is-active">
@@ -39,20 +39,69 @@
 <main>
     <section class="pages"> 
     <div class="page is-active" data-page="1">
-        <h2>Page 1 working</h2>
-        <p>Welcome to the enroll page</p>
+        <h2>Enroll In A Course</h2>
+        <br>
+        <div class="enrollBox">
+            <form action="enroll.php" method="post" >
+                <?php
+                    $temp = $_SESSION['ID'];
+                    $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
+                    $sql = "SELECT * FROM course";
+                    $result = mysqli_query($link,$sql);
+                    if($result->num_rows != 0){
+                        echo '<select name="course" id="course">';
+                        echo '<option value="none"> Select A Course</option>';
+                        $num_results = mysqli_num_rows($result);
+                        for ($i=0;$i<$num_results;$i++) {
+                            $row = mysqli_fetch_array($result);
+                            $num  = $row['Number'];
+                            $name = $row['Name'];
+                            $Dname = $row['DeptName'];
+                            $profID = $row['ProfessorUID'];
+                            
+                            $sql2    = "SELECT * FROM person WHERE UniversityID=$profID";
+                            $result2 = mysqli_query($link,$sql2);
+                            $row2 = mysqli_fetch_array($result2);
+                            $First = $row2['Fname'];
+                            $Last = $row2['Lname'];
+                            echo '<option value="'.$num.'">'.$Dname. " " .$num. " \t, ".$name." ,\t Professor: ".$First." ".$Last. '</option>';
+                        }
+                        echo '</select>';
+                        echo '</label>';
+                    }
+                    mysqli_close($link);
+                ?>
+                <br>
+                <input type="submit" value="Enroll In Course" id="SB">
+                <br>
+                <br>
+                <div class=greentext5 id=greentext5 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                    Successfully Enrolled in Course
+                </div>
+                <div class=redtext5 id=redtext5 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                    Error Enrolling in Course
+                </div>
+            </form>
+        </div>
     </div>
+
+
+
 
     <div class="page" data-page="2">
         <h2>Page 2</h2>
         <p>Welcome to the drop Course page</p>
     </div>
 
+
+
+
     <div class="page" data-page="3">
         <h2>Page 3</h2>
         <p>Welcome to the view page</p>
     </div>
     </section>
+
 </main>
 
 

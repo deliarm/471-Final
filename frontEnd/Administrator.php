@@ -302,7 +302,7 @@ session_start()
                                 mysqli_close($link);
                             ?>
                             <br>
-                            <input type="submit" value="Remove Course" id="SB">
+                            <input type="submit" value="Remove Student" id="SB">
                             <br>
                             <br>
                             <div class=greentext4 id=greentext4 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
@@ -323,7 +323,7 @@ session_start()
 
 
 
-    <!-- <footer class = "bg-white" id="bottom">
+    <!-- <footer class="Footer" id="bottom">
         <div class = "Inner_Footer">
             <div class = "logo_container">
                 <img src = img/Logo.jpg></img>
@@ -354,7 +354,6 @@ session_start()
         </div>
     </footer> -->
 <!-- </div> -->
-
-<script src="admin.js"></script>
+ <script src="admin.js"></script>
 </body>
 </html>

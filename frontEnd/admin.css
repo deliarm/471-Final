@@ -15,7 +15,10 @@ nav{
   background-color: royalblue;
 }
 
-
+#course{
+  width: 60%;
+  left: 20%;
+}
 
 header nav{
   display: flex;
@@ -238,6 +241,15 @@ select option {
   display: none;
 }
 .greentext4{
+  color: #5DFC0A;
+  display: none;
+}
+
+.redtext5{
+  color: red;
+  display: none;
+}
+.greentext5{
   color: #5DFC0A;
   display: none;
 }
