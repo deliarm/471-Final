@@ -155,10 +155,8 @@
     </section>
     <!-- BEGIN VIEW PAGE -->
 
-    
+
 </main>
-
-
 
 
 

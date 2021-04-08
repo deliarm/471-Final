@@ -74,7 +74,6 @@ header nav .tabs .tab.is-active a[data-switcher]{
 main{
   padding-left: 142px;
   padding-right: 142px;
-  padding-bottom: 250px;
 }
 
 .pages {
@@ -260,7 +259,6 @@ select option {
   display: none;
 }
 
-
 .redtext6{
   color: red;
   display: none;
@@ -282,8 +280,8 @@ select option {
   overflow: hidden;
   padding: 15 15 15 15px;;
   box-sizing: border-box;
-  background-color: royalblue;
-  position: fixed;
+  background-color: grey;
+  position: absolute;
   bottom: 0px;
   clear: both;
   height: 185px;
