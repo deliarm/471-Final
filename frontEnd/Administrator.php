@@ -44,7 +44,7 @@ session_start()
                 <div class="page is-active" data-page="1">
                     <h2>Add a New Course</h2>
                     <div class="newCourse-box">
-                        <form action="addCourse.php" method="post">
+                        <form action="addCourse.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
 
                             <div class="txt_field">
                                 <input type="text" required id="CourseNum" name="CourseNum" >
@@ -151,7 +151,7 @@ session_start()
                     <h2>Remove A Course </h2>
                     <br>
                     <div class="removeCourseBox">
-                        <form action="removeCourse.php" method="post" >
+                        <form action="removeCourse.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
                             <?php
                                 $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
                                 $sql = "SELECT * FROM course";
@@ -197,7 +197,7 @@ session_start()
                 <div class="page" data-page="3">
                     <h2>Add A New Student</h2>
                     <div class="AddStudentBox">
-                        <form action="AddStudent.php" method="post">
+                        <form action="AddStudent.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
                             <div class="txt_field">
                                 <input type="text" required id="idNum" name="idNum" >
                                 <span></span>
@@ -280,7 +280,7 @@ session_start()
                     <h2>Remove A Student</h2>
                     <br>
                     <div class="removeStudentBox">
-                        <form action="removeStudent.php" method="post" >
+                        <form action="removeStudent.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
                             <?php
                                 $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
                                 $sql = "SELECT * FROM person WHERE UniversityID IN (SELECT UniversityID FROM student)";

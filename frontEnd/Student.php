@@ -38,11 +38,13 @@
 
 <main>
     <section class="pages"> 
+
+    <!-- BEGIN ENROLL PAGE -->
     <div class="page is-active" data-page="1">
         <h2>Enroll In A Course</h2>
         <br>
         <div class="enrollBox">
-            <form action="enroll.php" method="post" >
+            <form action="enroll.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
                 <?php
                     $temp = $_SESSION['ID'];
                     $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
@@ -72,36 +74,88 @@
                     mysqli_close($link);
                 ?>
                 <br>
+                <select name="semester" id="semester">
+                    <option value="Fall 2021"> Fall 2021</option>
+                    <option value="Winter 2022"> Winter 2022</option>
+                    <option value="Spring 2022"> Spring 2022</option>
+                    <option value="Summer 2022"> Summer 2022</option>
+                </select>
+                <br>
                 <input type="submit" value="Enroll In Course" id="SB">
                 <br>
                 <br>
-                <div class=greentext5 id=greentext5 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
+                <div class=greentext5 id=greentext5 style='width: 260px; height: 20px; margin-left: auto; margin-right: auto' >
                     Successfully Enrolled in Course
                 </div>
-                <div class=redtext5 id=redtext5 style='width: 280px; height: 20px; margin-left: auto; margin-right: auto' >
-                    Error Enrolling in Course
+                <div class=redtext5 id=redtext5 style='width: 200px; height: 20px; margin-left: auto; margin-right: auto' >
+                    Failed To Enroll in Course
                 </div>
             </form>
         </div>
     </div>
+    <!-- END ENROLL PAGE -->
 
 
 
-
+    <!-- BEGIN DROP PAGE -->
     <div class="page" data-page="2">
-        <h2>Page 2</h2>
-        <p>Welcome to the drop Course page</p>
+        <h2>Drop A Course</h2>
+        <br>
+        <div class="dropBox">
+            <form action="drop.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
+                <?php
+                    $temp = $_SESSION['ID'];
+                    $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
+                    $sql = "SELECT * FROM enrolled WHERE StudentUID=$temp";
+                    $result = mysqli_query($link,$sql);
+                    if($result->num_rows != 0){
+                        echo '<select name="dropped" id="course">';
+                        echo '<option value="none"> Select A Course</option>';
+                        $num_results = mysqli_num_rows($result);
+                        for ($i=0;$i<$num_results;$i++) {
+                            $row = mysqli_fetch_array($result);
+                            $num  = $row['CourseNum'];
+                            $name = $row['CourseName'];
+                            
+                            $sql2 = "SELECT * FROM course WHERE Number=$num";
+                            $result2 = mysqli_query($link,$sql2);
+                            $row2 = mysqli_fetch_array($result2);
+                            $Dname = $row2['DeptName'];
+                           
+                            echo '<option value="'.$num.'">' .$Dname. "\t,".$num. " \t, " .$name. '</option>';
+                        }
+                        echo '</select>';
+                        echo '</label>';
+                    }
+                    mysqli_close($link);
+                ?>
+                <br>
+                <br>
+                <input type="submit" value="Drop Course" id="SB">
+                <br>
+                <br>
+                <div class=greentext6 id=greentext6 style='width: 260px; height: 20px; margin-left: auto; margin-right: auto' >
+                    Successfully Enrolled in Course
+                </div>
+                <div class=redtext6 id=redtext6 style='width: 200px; height: 20px; margin-left: auto; margin-right: auto' >
+                    Failed To Enroll in Course
+                </div>
+            </form>
+        </div>
     </div>
+    <!-- END DROP PAGE -->
 
 
 
-
+    <!-- BEGIN VIEW PAGE -->
     <div class="page" data-page="3">
         <h2>Page 3</h2>
         <p>Welcome to the view page</p>
     </div>
     </section>
+    <!-- BEGIN VIEW PAGE -->
 
+    
 </main>
 
 
