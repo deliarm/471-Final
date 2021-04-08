@@ -166,7 +166,7 @@
             <img src = img/Logo.jpg></img>
         </div>
         <div class = "Links">
-            <h1>Github Accounts</h1>
+            <h1> About Us</h1>
             <a href = "https://github.com/nchahal3">Navroop Chahal</a> 
             <a href = "https://github.com/deliarm">Deliar Mohammadi</a>
             <a href = "https://github.com/jessicaljx1">Jiexin (Jessica) Liu</a>
@@ -179,7 +179,7 @@
             <a href = "https://library.ucalgary.ca">University Library</a>
         </div>
         <div class = "Links">
-            <h1>Media & Publications</h1>
+            <h1>UofC News</h1>
             <a href = "https://www.ucalgary.ca/ucalgary-news">News</a> 
             <a href = "https://ucalgary.ca/student-services/marcom/uthisweek">UThisWeek</a>
             <a href = "https://www.su.ucalgary.ca">Student Union</a>
