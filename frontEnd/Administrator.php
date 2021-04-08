@@ -323,7 +323,7 @@ session_start()
 
 
 
-    <!-- <footer class="Footer" id="bottom">
+     <footer class="Footer" id="bottom">
         <div class = "Inner_Footer">
             <div class = "logo_container">
                 <img src = img/Logo.jpg></img>
@@ -352,7 +352,7 @@ session_start()
                 <a href = "http://localhost/471-final/frontEnd/index.php">Logout</a> 
             </div>
         </div>
-    </footer> -->
+    </footer>
 <!-- </div> -->
  <script src="admin.js"></script>
 </body>
