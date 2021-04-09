@@ -137,6 +137,7 @@
                 <div class=greentext6 id=greentext6 style='width: 260px; height: 20px; margin-left: auto; margin-right: auto' >
                     Successfully Enrolled in Course
                 </div>
+                <br>
                 <div class=redtext6 id=redtext6 style='width: 200px; height: 20px; margin-left: auto; margin-right: auto' >
                     Failed To Enroll in Course
                 </div>
@@ -149,8 +150,48 @@
 
     <!-- BEGIN VIEW PAGE -->
     <div class="page" data-page="3">
-        <h2>Page 3</h2>
-        <p>Welcome to the view page</p>
+        <h2>View All Courses</h2>
+        <br>
+            <div class="ViewCourses">
+                <form action="ViewCourses.php" method="POST" onsubmit="setTimeout(function(){window.location.reload();},10);">
+                    <?php
+                        $link = mysqli_connect("localhost","root","navjesdel123","finalproject");
+                        $sql = "SELECT * FROM course ORDER BY DeptName";
+                        $result = mysqli_query($link,$sql);
+                        if ($result -> num_rows != 0) {
+                            echo '<table>';
+                            echo '<tr> <th> Department </th> <th id="cnum" name="cnum"> Number </th> <th> Name </th> <th> Professor </th> <th> Location </th> </tr>';
+                            $num_results = mysqli_num_rows($result);
+                            for ($i=0;$i<$num_results;$i++) {
+                                $row = mysqli_fetch_array($result);
+                                $Dname = $row['DeptName'];
+                                $number = $row['Number'];
+                                $Cname =$row['Name'];
+                                $room = $row['ClassroomNum'];
+                                $pnum = $row['ProfessorUID'];
+
+                                $sql2 = "SELECT * FROM person WHERE UniversityID=$pnum";
+                                $result2 = mysqli_query($link,$sql2);
+                                $row2 = mysqli_fetch_array($result2);
+                                $Fname = $row2['Fname'];
+                                $Lname = $row2['Lname'];
+
+                                $sql2 = "SELECT * FROM classroom WHERE RoomNum=$room";
+                                $result2 = mysqli_query($link,$sql2);
+                                $row2 = mysqli_fetch_array($result2);
+                                $building = $row2['Building'];
+
+                                echo '<tr> <th>' .$Dname. '</th> <th>' .$number. '</th> <th>' .$Cname. '</th> <th>' .$Fname. " " .$Lname.' </th> <th>' .$room. "," .$building. '</th> </tr>';
+                            }
+                            echo '</table>';
+                            echo '</label>';
+                        }
+                        mysqli_close($link);
+                    ?>
+                    <br>
+                </form>
+            </div>
+        </div>
     </div>
     </section>
     <!-- BEGIN VIEW PAGE -->
