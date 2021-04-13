@@ -1,5 +1,5 @@
 <?php
-session_start()
+    session_start()
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +44,7 @@ session_start()
                 <div class="page is-active" data-page="1">
                     <h2>Add a New Course</h2>
                     <div class="newCourse-box">
-                        <form action="addCourse.php" method="post" onsubmit="setTimeout(function(){window.location.reload();},10);">
-
+                        <form action="addCourse.php" method="post onsubmit="setTimeout(function(){window.location.reload();},10);">
                             <div class="txt_field">
                                 <input type="text" required id="CourseNum" name="CourseNum" >
                                 <span></span>
